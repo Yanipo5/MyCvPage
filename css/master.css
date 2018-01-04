@@ -1,0 +1,14 @@
+body{
+  background-color: #3C424C;
+  background-image: url("../resources/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}

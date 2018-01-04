@@ -1,0 +1,214 @@
+/* ###############
+    Brief sytles
+##################*/
+.container{
+  width: 75%;
+}
+.content{
+  font-size: 14px;
+}
+
+.content h3{
+  color: #3B5998;
+  text-decoration: underline;
+}
+
+.content > div{
+  background-color: rgba(255,255,255,0.1);
+  padding: 2%;
+}
+
+.content > div:hover{
+  animation:  empisize-div 5s both;
+}
+
+.content > div:hover h3{
+  animation: empisize-div-h3-color 1s both;
+}
+
+@keyframes empisize-div {
+  0%{
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  20%{
+    background-color: rgba(255,255,255,0.15);
+  }
+
+  100%{
+    background-color: rgba(255,255,255,0.4);
+  }
+}
+
+@keyframes empisize-div-h3-color {
+  0%{
+    color: #3B5998;
+  }
+
+  20%{
+    color: blue;
+  }
+
+  100%{
+    color: darkblue;
+  }
+}
+
+.header img{
+  border-radius: 50%;
+  width: 15%;
+  float: left;
+}
+
+.header h1, h2{
+  margin: 0 0 0 17%;
+}
+
+.clear{
+  clear: both;
+}
+
+.brief-list{
+  height: 100%
+}
+
+.brief-list ul li{
+  list-style-image: url("../../resources/checked.png");
+  margin-bottom: 2%;
+}
+
+/* ##############
+    skills sytles
+#################*/
+
+.skills-scales{
+  display: flex;
+}
+
+.skills-scales ul{
+  margin: 0;
+  flex-grow: 1;
+}
+
+.skills-scales ul li{
+  list-style: none;
+}
+
+.scale{
+  margin-left: 10px;
+  margin-bottom: 3px;
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 5px;
+  background-color: grey;
+}
+
+.fill{
+  background-color: red;
+  position: absolute;
+  display: inline-block;
+  height: 5px;
+}
+
+.width90{
+  width: 90%;
+}
+
+.width75{
+  width: 75%;
+}
+
+.width65{
+  width: 65%;
+}
+
+.width80{
+  width: 80%;
+}
+
+.width25{
+  width: 25%;
+}
+/* ###############
+    Studies sytles
+##################*/
+
+.tree-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.tree-container img{
+  height: 30px;
+  width: 30px;
+}
+
+.line{
+  height: 30px;
+  border-left: 3px dashed grey;
+}
+
+.tree-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.tree-item div{
+  width: 50%;
+  margin-left: 5px;
+  flex-grow: 1;
+}
+
+.tree-item div:nth-child(1){
+  margin-left: 0;
+  margin-right: 5px;
+  text-align: end;
+}
+
+/* ##################
+  Projects sytles
+#####################*/
+
+#Projects a{
+  color: black;
+  text-decoration: none;
+}
+
+/* ##################
+  Achievements sytles
+#####################*/
+
+#Achievements ul li{
+  list-style-image: url("../../resources/trophy.png");
+  margin-bottom: 2%;
+}
+
+/* #################
+    Contact me sytles
+####################*/
+.ContactMe-links{
+  height: 35px;
+}
+
+#ContactMe img:hover{
+  animation: grow 1s both;
+}
+
+@keyframes grow {
+  0%{width: 5%}
+  100%{width: 7.5%}
+}
+
+#ContactMe img:not(:hover){
+  animation: shrink 1s both;
+}
+
+@keyframes shrink {
+  0%{width: 7.5%}
+  100%{width: 5%}
+}
