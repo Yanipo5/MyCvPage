@@ -1,0 +1,27 @@
+{
+  "name": "mycv",
+  "version": "1.0.0",
+  "description": "Yaniv Pertz CV",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yanipo5/MyCvPage.git"
+  },
+  "author": "Yaniv Peretz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yanipo5/MyCvPage/issues"
+  },
+  "homepage": "https://github.com/Yanipo5/MyCvPage#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "animate.css": "^3.5.2",
+    "bootstrap": "4.0.0-beta.3",
+    "bytesize-icons": "^1.3.0",
+    "jquery": "^3.2.1",
+    "type-write": "^1.0.1"
+  }
+}

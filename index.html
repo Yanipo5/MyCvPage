@@ -1,216 +1,389 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/master.css">
-  <link rel="stylesheet" media="(min-width: 450px)" href="css/master.css">
-  <link rel="stylesheet" media="(min-width: 450px)" href="css/PC/navigation.css">
-  <link rel="stylesheet" media="(min-width: 450px)" href="css/PC/content.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Yanic Peretz - CV</title>
 
-  <link rel="stylesheet" media="(max-width: 449px)" href="css/Mobile/mobile.css">
+  <!-- scripts -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/type-write/dist/typewrite.min.js"></script>
 
-
-  <title> Yaniv Peretz </title>
+  <!-- styles -->
+  <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/responsive-font-sizes.css">
+  <link rel="stylesheet" href="css/main2.css">
 </head>
-<body>
 
-  <div class="container">
+<body ng-app="main" ng-controller="main">
 
-    <div class="navigation">
+  <!--  #################
+        Navigation Bar   
+        ################# -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <nav class="nav-links">
-        <a href="#Brief">Brief</a>
-        <a href="#Skills">Skills</a>
-        <a href="#Studies">Studies</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Projects">Projects</a>
-        <a href="#Achievements">Achievements</a>
-        <a href="#ContactMe">Contact me</a>
-      </nav>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#contactDetails">Contact Details
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" target="_blank" href="https://github.com/Yanipo5?tab=repositories">
+            <svg class="icon">
+              <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-github"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/yanivperetz/">
+            <svg class="icon" style="fill:white">
+              <use xlink:href="resources/linkedin-logo.svg#Capa_1"></use>
+            </svg>
+          </a>
+        </li>
 
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </nav>
 
+  <!--  ########
+    Main Content 
+    ######## -->
 
-    <div class="content">
-      <div id="Brief">
-
-        <div class="header">
-          <img src="./resources/profile.jpg" alt="Yaniv">
-          <h1>Yaniv Peretz</h1>
-          <h2>Developer</h2>
-        </div>
-
-        <div class="brief-list clear">
-          <h3 class="clear">About Me</h3>
-          <ul>
-            <li>Previous system analyst at <b>IBM</b> (analysis & define software business processes). </li>
-            <li>Studying Computer science both at the Open University (theoretical) & Jhon Bryce (practical), and self learning new techs (React etc.).</li>
-            <li>Very Logical individual, previous <b>Debate</b> practitioner and <b>sophomore regional champion</b>.</li>
-            <li>Practical knowladge in: Java, JavaScript, SQL, HTML, CSS, and some Linux commands.</li>
-          </ul>
-        </div>
-
-
-      </div>
-
-      <div id="skills">
-        <h3>Skills</h3>
-        <div class="skills-scales">
-
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-
-          <div class="">
-            <span class="scale"><span class="fill width90"></span></span>
-            <span class="scale"><span class="fill width75"></span></span>
-            <span class="scale"><span class="fill width65"></span></span>
+  <!-- type write greeting -->
+  <h1 id="typewrite-greeting"></h1>
+  <!-- main content -->
+  <div id="main-content" class="main">
+    <div id="accordion" role="tablist">
+      <div class="card bg-secondary text-black" id="card1">
+        <a class="text-black" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+          <div class="card-header bouncing-title" role="tab" id="headingOne" onmouseenter="pulseStart('card1')" onmouseleave="pulseStop('card1')">
+            <h5 class="mb-0">
+              <svg class="icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-user"></use>
+              </svg>
+              About Me
+            </h5>
           </div>
+        </a>
 
-          <ul>
-            <li>Java</li>
-            <li>SQL</li>
-            <li>linux</li>
-          </ul>
-
-          <div class="">
-            <span class="scale"><span class="fill width80"></span></span>
-            <span class="scale"><span class="fill width90"></span></span>
-            <span class="scale"><span class="fill width25"></span></span>
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <p>I’m a very logical person, a tech enthusiast, with strong background in various technical positions. My latest
+              position was software requirement analysis, customization and configuration.</p>
+            <p> Currently available, and looking forward for a full time position as a web developer.</p>
           </div>
         </div>
-
       </div>
-
-      <div id="Studies">
-        <h3>Studies</h3>
-
-        <div class="tree-container">
-
-            <div class="tree-item">
-              <div><span><b>:TBA</b><br>Computer Science, The Open University (trailing average 82)</span></div>
-              <img src="./resources/graduation.png" alt="">
-              <div></div>
+      <div class="card bg-secondary text-black" id="card2">
+        <a class="collapsed text-black" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo"
+          onclick="fillProcessBars.toggle()">
+          <div class="card-header" role="tab" id="headingTwo" onmouseenter="pulseStart('card2')" onmouseleave="pulseStop('card2')">
+            <h5 class="mb-0">
+              <svg class="icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-settings"></use>
+              </svg>
+              My Tech Knowledge
+            </h5>
+          </div>
+        </a>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <div class="skill-sets-container">
+              <div class="skills-container">
+                <h3 style="width:100%">Backend</h3>
+                <div class="skill-item" ng-repeat="skill in backendSkills">
+                  <h4 class="hiddenInPhone">{{skill.name}}</h4>
+                  <div class="progress">
+                    <div id="test" class="progress-bar progress-bar-striped bg-info progress-bar-animated progress-bar-empty" role="progressbar"
+                      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="max-width: {{skill.max_width}}">Java</div>
+                  </div>
+                  <p>{{skill.msg}}</p>
+                </div>
+              </div>
+              <div class="skills-container">
+                <h3 style="width:100%">Frontend</h3>
+                <div class="skill-item" ng-repeat="skill in frontendSkills">
+                  <h4 class="hiddenInPhone">{{skill.name}}</h4>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated progress-bar-empty" role="progressbar" aria-valuenow="75"
+                      aria-valuemin="0" aria-valuemax="100" style="max-width: {{skill.max_width}}">HTML & CSS</div>
+                  </div>
+                  <p>{{skill.msg}}</p>
+                </div>
+              </div>
             </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div></div>
-              <img src="./resources/certificate.png" alt="">
-              <div><span><b>2017:</b><br>John Bryce – Java Web Applications</span></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div><span><b>:2017</b><br>Practis - Introduction to hacking</span></div>
-              <img src="./resources/certificate.png" alt="">
-              <div></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div></div>
-              <img src="./resources/certificate.png" alt="">
-              <div><span><b>2017:</b><br>Coursera - Nand2Tetris </span></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div><span><b>:2010 - 2014</b><br>B.A. Economics & Management (with Honors)</span></div>
-              <img src="./resources/graduation.png" alt="">
-              <div></div>
-            </div>
-
+          </div>
         </div>
       </div>
-
-      <div id="Experience">
-        <h3>Experience</h3>
-
-        <div class="tree-container">
-
-            <div class="tree-item">
-              <div><span><b>2017:</b><br>IBM - Training team leader</span></div>
-              <img src="./resources/Experience/ibm-logo.png" alt="" style="height:20px;">
-              <div></div>
+      <div class="card bg-secondary text-black" id="card3">
+        <a class="collapsed text-black" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+          <div class="card-header" role="tab" id="headingThree" onmouseenter="pulseStart('card3')" onmouseleave="pulseStop('card3')">
+            <h5 class="mb-0">
+              <svg class="icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-portfolio"></use>
+              </svg>
+              My Projects
+            </h5>
+          </div>
+        </a>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <div id="projectsCarousel" class="carousel slide" data-ride="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <video width="100%" controls>
+                    <source src="resources/video/coupon-system.mp4" type="video/mp4"> Your browser does not support the video tag.
+                  </video>
+                  <a target="_blank" class="carousel-link" href="http://ec2-52-59-194-236.eu-central-1.compute.amazonaws.com:8080/CouponSystemServer/">
+                    <div>
+                      <h3>Coupon System
+                        <svg class="icon">
+                          <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-link"></use>
+                        </svg>
+                      </h3>
+                      <p>Supports 3 tyes of user, admin to create remove and edit companies, and customers.
+                        <br>Company to created coupons
+                        <br>Customer to purchase coupons
+                        <br>
+                        <b>Tech Stack:</b> Java (Spring, Hibernate), Angularjs, Mysql</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <video width="100%" controls>
+                    <source src="resources/video/menu-creator.mp4" type="video/mp4"> Your browser does not support the video tag.
+                  </video>
+                  <a target="_blank" class="carousel-link" href="http://ec2-52-59-194-236.eu-central-1.compute.amazonaws.com:8080/CouponSystemServer/">
+                    <div>
+                      <h3>Menu Creator
+                        <svg class="icon">
+                          <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-link"></use>
+                        </svg>
+                      </h3>
+                      <p>Create new menu, and distribue to users
+                        <br>
+                        <b>Tech Stack:</b> NodeJs, React</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div></div>
-              <img src="./resources/Experience/ibm-logo.png" alt="" style="height:20px;">
-              <div><span><b>2014 - 2016:</b>IBM - System Consultant (SAP)<br></span></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div><span><b>2013 - 2014: </b><br>Danel - Software Implementor</span></div>
-              <img src="./resources/Experience/Danel-logo.jpg" alt="" style="height:20px;">
-              <div></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div></div>
-              <img src="./resources/Experience/bezeq-logo.png" alt="" style="height:20px;">
-              <div><span><b>2011</b><br>Bezeq - Technical Help Desk Representative</span></div>
-            </div>
-            <div class="line" ></div>
-
-            <div class="tree-item">
-              <div><span><b>2005 - 2008:</b><br>IDF - Airforce, Aircraft Technician </span></div>
-              <img src="./resources/Experience/IDF-logo.png" alt="" style="height:20px;">
-              <div></div>
-            </div>
-
+          </div>
         </div>
       </div>
+      <div class="card bg-secondary text-black" id="card4">
+        <a class="collapsed text-black" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseThree">
+          <div class="card-header" role="tab" id="headingThree" onmouseenter="pulseStart('card4')" onmouseleave="pulseStop('card4')">
+            <h5 class="mb-0">
+              <svg class="icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-work"></use>
+              </svg>
+              My Expiriance
+            </h5>
+          </div>
+        </a>
+        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <div class="tree-container">
 
-      <div id="Projects">
-        <h3>Projects</h3>
-        <h4><a href="https://github.com/Yanipo5" target="_blank">GitHub: Yanipo5</a></h4>
+              <div class="tree-item">
+                <div></div>
+                <img src="resources/Experience/ibm-logo.png" alt="" style="height:20px;">
+                <div>
+                  <span>
+                    <b>2017:</b>Midburn Tech - Fullstack Developer
+                    <br>
+                  </span>
+                </div>
+              </div>
+              <div class="line"></div>
 
-        <p><b><a href="https://github.com/Yanipo5/Coupon-System.git" target="_blank">Coupon-System</b>: This is an assignment based project, a Client-Server Coupon System.<br>
-          Written in Java, using JDBC as an SQL DB, the program currently allows 3 user types to perform different DB Crud operations (Create, read, update, delete).
-          Currently in process: creating the client side interface.</a></p>
-        <p><b><a href="https://www.coursera.org/learn/build-a-computer" target="_blank">Nand2Tetris</b>: Coursera based Project – Building a complete computer from first order principles (Nanad gates). <br>
-          In Python I’ve built a conceptional Assembler & VM translator.</a></p>
-      </div>
+              <div class="tree-item">
+                <div>
+                  <span><b>2017:</b>IBM - Training team leader</span>
+                </div>
+                <img src="resources/Experience/ibm-logo.png" alt="" style="height:20px;">
+                <div></div>
+              </div>
+              <div class="line"></div>
 
-      <div id="Achievements">
-        <h3>Achievements</h3>
-        <ul>
-          <li>Promoted to Management at IBM</li>
-          <li>Manger choice monthly award <b>X2</b></li>
-          <li>BA (Economics & Management) with Honors (final grade: 86)</li>
-          <li>Debate sophomore regional chamption</li>
-        </ul>
-      </div>
+              <div class="tree-item">
+                <div></div>
+                <img src="resources/Experience/ibm-logo.png" alt="" style="height:20px;">
+                <div>
+                  <span>
+                    <b>2014 - 2016:</b>IBM - System Consultant (SAP)
+                  </span>
+                </div>
+              </div>
+              <div class="line"></div>
 
-      <div id="ContactMe">
-        <h3>Contact me</h3>
-        <div class="ContactMe-links">
-          <a href="tel:0545850859"><img src="./resources/phone-call-button.svg" alt="0545850859" title="0545850859"></a>
-          <a href="mailto:yip528@gmail.com" target="_blank"><img src="./resources/close-envelope.svg" alt="yip528@gmail.com" title="yip528@gmail.com"></a>
-          <a href="http://www.linkedin.com/in/yanivperetz" target="_blank"><img src="./resources/linkedin-logo.svg" alt="www.linkedin.com/in/yanivperetz" title="www.linkedin.com/in/yanivperetz"></a>
+              <div class="tree-item">
+                <div>
+                  <span>
+                    <b>2013 - 2014:</b>Danel - Software Implementor</span>
+                </div>
+                <img src="resources/Experience/Danel-logo.jpg" alt="" style="height:20px;">
+                <div></div>
+              </div>
+              <div class="line"></div>
+
+              <div class="tree-item">
+                <div></div>
+                <img src="resources/Experience/bezeq-logo.png" alt="" style="height:20px;">
+                <div>
+                  <span>
+                    <b>2011:</b>Bezeq - Technical Help Desk Representative</span>
+                </div>
+              </div>
+              <div class="line"></div>
+
+              <div class="tree-item">
+                <div>
+                  <span>
+                    <b>2005 - 2008:</b>IDF - Airforce, Aircraft Technician</span>
+                </div>
+                <img src="resources/Experience/IDF-logo.png" alt="" style="height:20px;">
+                <div></div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
-        <br>
-        <hr>
-        <div>0545850859</div>
-        <div>email:yip528@gmail.com</div>
-        <div>linkedin:www.linkedin.com/in/yanivperetz</div>
-
       </div>
+      <div class="card bg-secondary text-black" id="card5">
+        <a class="collapsed text-black" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseThree">
+          <div class="card-header" role="tab" id="headingThree" onmouseenter="pulseStart('card5')" onmouseleave="pulseStop('card5')">
+            <h5 class="mb-0">
+              <svg class="icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-book"></use>
+              </svg>
+              My Education
+            </h5>
+          </div>
+        </a>
+        <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <div class="tree-container">
+              <div class="tree-item">
+                <div>
+                  <span>
+                    <b>:TBA</b>
+                    <br>Computer Science, The Open University (trailing average 82)</span>
+                </div>
+                <img src="resources/graduation.png">
+                <div></div>
+              </div>
+              <div class="line"></div>
 
+              <div class="tree-item">
+                <div></div>
+                <img src="resources/certificate.png">
+                <div>
+                  <span>
+                    <b>2017:</b>John Bryce – Java Web Applications</span>
+                </div>
+              </div>
+              <div class="line"></div>
+
+              <div class="tree-item">
+                <div>
+                  <span>
+                    <b>2017:</b>Practis - Introduction to hacking</span>
+                </div>
+                <img src="resources/certificate.png">
+                <div></div>
+              </div>
+              <div class="line"></div>
+
+              <div class="tree-item">
+                <div></div>
+                <img src="resources/certificate.png">
+                <div>
+                  <span>
+                    <b>2017:</b>Coursera - Nand2Tetris </span>
+                </div>
+              </div>
+              <div class="line"></div>
+
+              <div class="tree-item">
+                <div>
+                  <span>
+                    <b>2010 - 2014:</b>B.A. Economics & Management (with Honors)</span>
+                </div>
+                <img src="resources/graduation.png">
+                <div></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!--  ########
+    Modeals 
+    ######## -->
+  <div class="modal fade" id="contactDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Yaniv Peretz</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="contant-item">
+            <a href="tel:0545850859">
+              <svg class="contact-details-icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-mobile"></use>
+              </svg>
+              0545850859
+            </a>
+          </p>
+          <p class="contant-item">
+            <a href="mailto:yip528@gmail.com" target="_blank">
+              <svg class="contact-details-icon">
+                <use xlink:href="node_modules/bytesize-icons/dist/bytesize-inline.svg#i-mail"></use>
+              </svg>
+              yip528@gmail.com
+            </a>
+          </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-<div style="display:none;">
-  <div>Icons made by <a href="https://www.flaticon.com/authors/maxim-basinski" title="Maxim Basinski">Maxim Basinski</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-</div>
+<script src="js/main.js"></script>
+
 </html>
