@@ -1,28 +1,59 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app class="main-app">
+    <h1 class="white--text">
+      <span>Yaniv Peretz CV</span>
+      <ContectMe />
+    </h1>
+    <ExpentionPanel class="slideInUp" />
+    <vue-particles class="particals" color="#01579B" linesColor="#B3E5FC" />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ExpentionPanel from "@/components/ExpentionPanel";
+import ContectMe from "@/components/ContectMe";
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  components: { ExpentionPanel, ContectMe }
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes slowBg {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #212121;
+  }
+}
+.main-app {
+  margin: auto;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  max-width: 100%;
+  animation: slowBg 2s forwards;
+  position: relative;
+}
+.particals {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  animation-name: slideInUp;
 }
 </style>

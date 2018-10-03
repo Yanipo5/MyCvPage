@@ -1,0 +1,18 @@
+[
+  {
+    "name": "all",
+    "icon": "select_all"
+  },
+  {
+    "name": "experiance",
+    "icon": "work"
+  },
+  {
+    "name": "study",
+    "icon": "school"
+  },
+  {
+    "name": "others",
+    "icon": "scatter_plot"
+  }
+]

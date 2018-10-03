@@ -1,0 +1,74 @@
+[
+  {
+    "dates": "2018 - Current",
+    "title": "Frontend Developer, Jeeng Applications",
+    "component": "ExpirianceJeeng",
+    "category": "experiance"
+  },
+  {
+    "dates": "2018 - Current",
+    "title": "B.A. Computer Science, Open University",
+    "component": "StudyComputerScience",
+    "category": "study"
+  },
+  {
+    "dates": "2017 - 2017",
+    "title": "Full Stack Developer, Midbern Tech (volunteer)",
+    "component": "ExpirianceMidburn",
+    "category": "experiance"
+  },
+  {
+    "dates": "2017 - 2017",
+    "title": "Java Full Stack, Jhon Bryce",
+    "component": "StudyJava",
+    "category": "study"
+  },
+  {
+    "dates": "2016 - 2016",
+    "title": "Nand2Tetris, Coursera",
+    "body": "building a Tetris game starting from building the logical gates > ALU > CPU > Complier > second Complier (“like bytecode:”) >OS > and the Tetris game. complete all but the OS and the Tetris, (luck of time for the moment) all in Python.",
+    "category": "study"
+  },
+  {
+    "dates": "2016 - 2016",
+    "title": "Team Lead, training, IBM",
+    "body": "Plan and track execution of training curriculum in 4 countries, with 13 trainers. I lead a training process change to create a curriculum that trained the end users end 2 end.",
+    "category": "experiance"
+  },
+  {
+    "dates": "2014 - 2016",
+    "title": "System Analyst Consultant, IBM",
+    "body": "Collecting system requirements, and overseeing the development, test and deployment of software solutions, to client acceptance. I was primary engaged in creating the automatic process for calulating, and matching transportation costs.",
+    "category": "experiance"
+  },
+  {
+    "dates": "2013 - 2014",
+    "title": "Software Implementor, Danel",
+    "body": "Collecting system requirements, and overseeing the development, test and deployment of software solutions, to client acceptance. I was primary engaged in creating the automatic process for calulating of equity valuations and return on ivestment.",
+    "category": "experiance"
+  },
+  {
+    "dates": "2012 - 2015",
+    "title": "B.A. Economics & Management, With excellence, Open University",
+    "body": "",
+    "category": "study"
+  },
+  {
+    "dates": "2012 - 2013",
+    "title": "Debate Club, Open University",
+    "body": "Competted in logics and reasoning, I won a freshman regional award for logical speaking.",
+    "category": "others"
+  },
+  {
+    "dates": "2011 - 2011",
+    "title": "Perah Project",
+    "body": "Mentor for a 8-th child for 1 year.",
+    "category": "others"
+  },
+  {
+    "dates": "Always",
+    "title": "Key Personality Strengths",
+    "body": "Logical Thinking, Responsibility, Fast Learner.",
+    "category": "others"
+  }
+]
