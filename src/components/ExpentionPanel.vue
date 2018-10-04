@@ -1,17 +1,17 @@
 <template>
-  <transition name="slide-fade" appear>
+  <div>
     <div>
-      <div>
-        <span class="flow-over-particals">
-          <v-tooltip bottom v-for="c in categoties" :key="c.name" :disabled="$vuetify.breakpoint.smAndUp">
-            <v-btn slot="activator" @click="setCategory(c.name)" :class="buttonsClass(c.name)" :style="buttonsStyle" class="elevation-24">
-              <v-icon class="pr-2">{{c.icon}}</v-icon>
-              <span v-show="$vuetify.breakpoint.smAndUp">{{c.name}}</span>
-            </v-btn>
-            <span>{{c.name}}</span>
-          </v-tooltip>
-        </span>
-      </div>
+      <span class="flow-over-particals">
+        <v-tooltip bottom v-for="c in categoties" :key="c.name" :disabled="$vuetify.breakpoint.smAndUp">
+          <v-btn slot="activator" @click="setCategory(c.name)" :class="buttonsClass(c.name)" :style="buttonsStyle" class="elevation-24">
+            <v-icon class="pr-2">{{c.icon}}</v-icon>
+            <span v-show="$vuetify.breakpoint.smAndUp">{{c.name}}</span>
+          </v-btn>
+          <span>{{c.name}}</span>
+        </v-tooltip>
+      </span>
+    </div>
+    <transition name="slide-fade" appear>
       <div :style="expansionStyleObj" :class="expansionClass" class="flow-over-particals">
         <v-expansion-panel v-model="expandedPanel" :popout="$vuetify.breakpoint.smAndUp">
           <v-expansion-panel-content class="deep-orange">
@@ -42,8 +42,8 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -168,7 +168,7 @@ export default {
   transition-delay: 0.5s;
 }
 .slide-fade-enter {
-  transform: translateY(500px);
+  transform: translateY(100vh);
   opacity: 0;
 }
 </style>
