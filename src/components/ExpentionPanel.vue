@@ -1,47 +1,49 @@
 <template>
-  <div>
+  <transition name="slide-fade" appear>
     <div>
-      <span class="flow-over-particals">
-        <v-tooltip bottom v-for="c in categoties" :key="c.name" :disabled="$vuetify.breakpoint.smAndUp">
-          <v-btn slot="activator" @click="category=c.name" :class="buttonsClass(c.name)" :style="buttonsStyle" class="elevation-24">
-            <v-icon class="pr-2">{{c.icon}}</v-icon>
-            <span v-show="$vuetify.breakpoint.smAndUp">{{c.name}}</span>
-          </v-btn>
-          <span>{{c.name}}</span>
-        </v-tooltip>
-      </span>
-    </div>
-    <div :style="expansionStyleObj" :class="expansionClass" class="flow-over-particals">
-      <v-expansion-panel :popout="$vuetify.breakpoint.smAndUp">
-        <v-expansion-panel-content class="deep-orange">
-          <div slot="header" class="panel-title subheading .font-weight-light">
-            Job Interview my Bot (or ask Starwars questions)
-          </div>
-          <v-card>
-            <v-card-text class="grey lighten-3 pa-0">
-              <iframe width="100%" height="350" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/d6404865-92a5-48b7-bba6-0765aae12755"></iframe>
-            </v-card-text>
-          </v-card>
+      <div>
+        <span class="flow-over-particals">
+          <v-tooltip bottom v-for="c in categoties" :key="c.name" :disabled="$vuetify.breakpoint.smAndUp">
+            <v-btn slot="activator" @click="setCategory(c.name)" :class="buttonsClass(c.name)" :style="buttonsStyle" class="elevation-24">
+              <v-icon class="pr-2">{{c.icon}}</v-icon>
+              <span v-show="$vuetify.breakpoint.smAndUp">{{c.name}}</span>
+            </v-btn>
+            <span>{{c.name}}</span>
+          </v-tooltip>
+        </span>
+      </div>
+      <div :style="expansionStyleObj" :class="expansionClass" class="flow-over-particals">
+        <v-expansion-panel v-model="expandedPanel" :popout="$vuetify.breakpoint.smAndUp">
+          <v-expansion-panel-content class="deep-orange">
+            <div slot="header" class="panel-title subheading .font-weight-light">
+              Job Interview my Bot (or talk about Starwars :)
+            </div>
+            <v-card>
+              <v-card-text class="grey lighten-3 pa-0">
+                <iframe width="100%" height="350" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/d6404865-92a5-48b7-bba6-0765aae12755"></iframe>
+              </v-card-text>
+            </v-card>
 
-        </v-expansion-panel-content>
-        <v-expansion-panel-content v-for="(p, i) in filteredPanels" :key="i" class="elevation-24">
-          <div slot="header" class="panel-title">
-            <span class="panel-dates" :style="panelDates">{{p.dates}}</span>
-            <v-chip class="name-chip px-0 mr-2" small :color="categoryColor(p.category)">
-              <v-icon small>{{getCategoryIcon(p.category)}}</v-icon>
-            </v-chip>
-            <b>{{p.title}}</b>
-          </div>
-          <v-card>
-            <v-card-text class="grey lighten-3">
-              <component v-if="p.component" :is="p.component" />
-              <div v-else v-html="p.body" />
-            </v-card-text>
-          </v-card>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
+          </v-expansion-panel-content>
+          <v-expansion-panel-content v-for="(p, i) in filteredPanels" :key="i" class="elevation-24">
+            <div slot="header" class="panel-title">
+              <span class="panel-dates" :style="panelDates">{{p.dates}}</span>
+              <v-chip class="name-chip px-0 mr-2" small :color="categoryColor(p.category)">
+                <v-icon small>{{getCategoryIcon(p.category)}}</v-icon>
+              </v-chip>
+              <b>{{p.title}}</b>
+            </div>
+            <v-card>
+              <v-card-text class="grey lighten-3">
+                <component v-if="p.component" :is="p.component" />
+                <div v-else v-html="p.body" />
+              </v-card-text>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -56,7 +58,8 @@ export default {
   data: () => ({
     categoties,
     category: "all",
-    panels
+    panels,
+    expandedPanel: 0
   }),
   components: {
     ExpirianceJeeng,
@@ -127,6 +130,10 @@ export default {
     },
     getCategoryIcon(category) {
       return this.categoties.find(c => c.name === category).icon;
+    },
+    setCategory(category) {
+      this.expandedPanel = 1;
+      this.category = category;
     }
   }
 };
@@ -143,5 +150,25 @@ export default {
 }
 .name-chip >>> .v-chip__content {
   padding: 7px;
+}
+
+.list-item {
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-fade-enter-active {
+  transition: all 1s ease-out;
+  transition-delay: 0.5s;
+}
+.slide-fade-enter {
+  transform: translateY(500px);
+  opacity: 0;
 }
 </style>
