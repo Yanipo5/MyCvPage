@@ -25,21 +25,23 @@
             </v-card>
 
           </v-expansion-panel-content>
-          <v-expansion-panel-content v-for="(p, i) in filteredPanels" :key="i" class="elevation-24">
-            <div slot="header" class="panel-title">
-              <span class="panel-dates" :style="panelDates">{{p.dates}}</span>
-              <v-chip class="name-chip px-0 mr-2" small :color="categoryColor(p.category)">
-                <v-icon small>{{getCategoryIcon(p.category)}}</v-icon>
-              </v-chip>
-              <b>{{p.title}}</b>
-            </div>
-            <v-card>
-              <v-card-text class="grey lighten-3">
-                <component v-if="p.component" :is="p.component" />
-                <div v-else v-html="p.body" />
-              </v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
+          <transition-group tag="v-expansion-panel">
+            <v-expansion-panel-content v-for="p in filteredPanels" :key="p.title" class="elevation-24">
+              <div slot="header" class="panel-title">
+                <span class="panel-dates" :style="panelDates">{{p.dates}}</span>
+                <v-chip class="name-chip px-0 mr-2" small :color="categoryColor(p.category)">
+                  <v-icon small>{{getCategoryIcon(p.category)}}</v-icon>
+                </v-chip>
+                <b>{{p.title}}</b>
+              </div>
+              <v-card>
+                <v-card-text class="grey lighten-3">
+                  <component v-if="p.component" :is="p.component" />
+                  <div v-else v-html="p.body" />
+                </v-card-text>
+              </v-card>
+            </v-expansion-panel-content>
+          </transition-group>
         </v-expansion-panel>
       </div>
     </transition>
@@ -150,17 +152,6 @@ export default {
 }
 .name-chip >>> .v-chip__content {
   padding: 7px;
-}
-
-.list-item {
-}
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
 }
 
 .slide-fade-enter-active {
