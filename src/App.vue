@@ -5,7 +5,7 @@
       <ContectMe />
     </h1>
     <ExpentionPanel class="slideInUp" />
-    <vue-particles class="particals" color="#01579B" linesColor="#B3E5FC" />
+    <vue-particles class="particals" color="#01579B" linesColor="#B3E5FC" :particlesNumber="particlesNumber" />
   </v-app>
 </template>
 
@@ -14,7 +14,23 @@ import ExpentionPanel from "@/components/ExpentionPanel";
 import ContectMe from "@/components/ContectMe";
 
 export default {
-  components: { ExpentionPanel, ContectMe }
+  components: { ExpentionPanel, ContectMe },
+  computed: {
+    particlesNumber() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 40;
+        case "sm":
+          return 50;
+        case "md":
+          return 60;
+        case "lg":
+          return 70;
+        case "xl":
+          return 80;
+      }
+    }
+  }
 };
 </script>
 
